@@ -3,7 +3,16 @@ This is the Rust implementation of CMU's [Ramulator2](https://github.com/CMU-SAF
 
 ## Ramulator
 
-# Structure
+## Structure
+These are the files that are important to the functionality of this project:
+- src
+  - bindings.rs
+  - lib.rs
+  - ramulator_wrapper.rs
+- build.rs
+- call_ramulator.cpp
+- test_call_ramulator.c
+- wrapper.hpp
 
 # Requirements
 - **C++17 compatible compiler** (e.g., g++ ≥ 8)
