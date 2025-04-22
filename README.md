@@ -17,18 +17,18 @@ These are the files that are important to the functionality of this project:
 - test_call_ramulator.c
 - wrapper.hpp
 
-# Requirements
+## Requirements
 - **C++17 compatible compiler** (e.g., g++ ≥ 8)
 - [`yaml-cpp`](https://github.com/jbeder/yaml-cpp) installed (for YAML config parsing)
 - [`spdlog`](https://github.com/gabime/spdlog) headers available (used internally by Ramulator2)
 - Ramulator2 source code downloaded (not a precompiled binary)
 
-# Run Simulation
+## Run Simulation
 To run Ramulator, you need to call test_call_ramulator.c, which invokes call_ramulator.cpp.
 
 `./test_call_ramulator`
 
-# Example Output
+## Example Output
 You should expect DRAM statistics from the frontend and memory system. Here are some example numbers:
 ```Loaded configuration from file.
 Created frontend instance.
