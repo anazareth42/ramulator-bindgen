@@ -98,4 +98,5 @@ MemorySystem:
 
     RowPolicy:
       impl: ClosedRowPolicy
-      num_close_reqs: 0 ```
+      num_close_reqs: 0
+```
