@@ -11,6 +11,9 @@ These are the files that are important to the functionality of this project:
   - ramulator_wrapper.rs
 - build.rs
 - call_ramulator.cpp
+- cargo.lock
+- cargo.toml
+- Makefile
 - test_call_ramulator.c
 - wrapper.hpp
 
