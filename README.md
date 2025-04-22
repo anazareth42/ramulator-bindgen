@@ -1,5 +1,9 @@
-## Ramulator
+## Introduction
 This is the Rust implementation of CMU's [Ramulator2](https://github.com/CMU-SAFARI/ramulator2/tree/main/src) intended for HLS development. As the original repository is written in C/C++, this project uses Bindgen to generate Rust FFI bidings to the necessary libraries.
+
+# Ramulator
+
+## Structure
 
 ## Requirements
 - **C++17 compatible compiler** (e.g., g++ ≥ 8)
