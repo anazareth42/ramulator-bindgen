@@ -8,6 +8,7 @@ This is the Rust implementation of CMU's [Ramulator2](https://github.com/CMU-SAF
 - Ramulator2 source code downloaded (not a precompiled binary)
 
 ## Run Simulation
-
+To run Ramulator, you need to call test_call_ramulator.c, which invokes call_ramulator.cpp.
+`./test_call_ramulator`
 ## Example Output
 You should expect DRAM statistics from the frontend and memory system. Here are some example numbers:
