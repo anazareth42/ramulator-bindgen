@@ -22,6 +22,7 @@ These are the files that are important to the functionality of this project:
 
 ## Requirements
 - **C++17 compatible compiler** (e.g., g++ ≥ 8)
+- gcc-toolset 13
 - [`yaml-cpp`](https://github.com/jbeder/yaml-cpp) installed (for YAML config parsing)
 - [`spdlog`](https://github.com/gabime/spdlog) headers available (used internally by Ramulator2)
 - Ramulator2 source code downloaded (not a precompiled binary)
