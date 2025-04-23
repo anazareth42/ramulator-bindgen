@@ -2,7 +2,9 @@
 This is the Rust implementation of CMU's [Ramulator2](https://github.com/CMU-SAFARI/ramulator2/tree/main/src) intended for HLS development. As the original repository is written in C/C++, this project uses Bindgen to generate Rust FFI bidings to the necessary libraries.
 
 ## Ramulator
-Ramulator 2.0 is a cycle-accurate DRAM simulator developed by researchers from Carnegie Mellon University. It enables rapid and agile implementation of design changes within the memory controller. This tool is widely used by computer architecture researchers for modeling memory performance, validating timing parameters, and evaluating interactions between controllers and memory units.
+Ramulator 2.0 is a cycle-accurate DRAM simulator developed by researchers from Carnegie Mellon University. It enables rapid and agile implementation of design changes within the memory controller. This tool is widely used by computer architecture researchers for modeling memory performance, validating timing parameters, and evaluating interactions between controllers and memory systems. 
+
+Ramulator can support the following DRAM standards: DDR3, DDR4, LPDDR4, LPDDR5, GDDR5, HBM2, HBM3, etc. Developers can customize these standards through YAML config inputs. Its C++ API allows for bindings with external simulators and wrappers.
 
 ## Structure
 These are the files that are important to the functionality of this project:
