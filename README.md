@@ -31,7 +31,7 @@ To build this project, we need to generate the FFI bindings from bindgen. Type t
 
 `cargo build`
 
-This should compile the C++ code in addition to creating the Rust project. To test the output of `call_ramulator.cpp`, you need to call test_call_ramulator.c, which is a standalone C test harness.
+This should compile the C++ code in addition to creating the Rust project. To test the output of `call_ramulator.cpp`, you need to call test_call_ramulator.c, which is a standalone C test harness:
 
 `./test_call_ramulator`
 
