@@ -1,7 +1,7 @@
-# Introduction
+# Ramulator Wrapper
 This project implements the C++ wrapper around CMU's [Ramulator2](https://github.com/CMU-SAFARI/ramulator2/tree/main/src) intended for high-level synthesis development. The wrapper displays the statistics for both the frontend and memory system of Ramulator. The wrapper can be accessed from both C and Rust through BindGen which generates FFI bindings. The C++ interface (`call_ramulator.cpp`) simulates the frontend and memory system setup through YAML configuration. This provides access to internal simulation statistics such as instruction counts and DRAM throughput. The hybrid C++/Rust architecture allows for intergration within HLS simulation tool flows which promotes greater accuracy of memory modeling and timing.
 
-## Ramulator
+## Ramulator 2.0
 Ramulator 2.0 is a cycle-accurate DRAM simulator developed by researchers from Carnegie Mellon University. It enables rapid and agile implementation of design changes within the memory controller. This tool is widely used by computer architecture researchers for modeling memory performance, validating timing parameters, and evaluating interactions between controllers and memory systems. 
 
 Ramulator can support the following DRAM standards: DDR3, DDR4, LPDDR4, LPDDR5, GDDR5, HBM2, HBM3, etc. Developers can customize these standards through YAML config inputs. Its C++ API allows for bindings with external simulators and wrappers.
