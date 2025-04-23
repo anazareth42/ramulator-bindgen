@@ -36,7 +36,7 @@ This should compile the C++ code in addition to creating the Rust project. To te
 `./test_call_ramulator`
 
 ## Example Output
-You should expect DRAM statistics from the frontend and memory system. Here are some example numbers:
+You should expect DRAM statistics from the frontend and memory system. Here are the latency results when address 0x12345678 is provided:
 ```Loaded configuration from file.
 Created frontend instance.
 Created memory system instance.
