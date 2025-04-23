@@ -27,7 +27,13 @@ These are the files that are important to the functionality of this project:
 - Ramulator2 source code downloaded (not a precompiled binary)
 
 ## Run Simulation
-To run Ramulator, you need to call test_call_ramulator.c, which invokes call_ramulator.cpp.
+To build this project, we need to generate the FFI bindings from bindgen. Type the following command in the terminal:
+
+`cargo build`
+
+This should compile the C++ code in addition to creating the Rust project. 
+
+To test the output of `call_ramulator.cpp`, you need to call test_call_ramulator.c, which is a standalone C test harness.
 
 `./test_call_ramulator`
 
