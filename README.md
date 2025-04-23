@@ -8,17 +8,17 @@ Ramulator can support the following DRAM standards: DDR3, DDR4, LPDDR4, LPDDR5, 
 
 ## Structure
 These are the files that are important to the functionality of this project:
-- src
-  - bindings.rs
-  - lib.rs
-  - ramulator_wrapper.rs
-- build.rs
-- call_ramulator.cpp
-- cargo.lock
-- cargo.toml
-- Makefile
-- test_call_ramulator.c
-- wrapper.hpp
+- **src**
+  - **bindings.rs** - Rust bindings created through bindgen
+  - **lib.rs** - Rust crate entry point 
+  - **ramulator_wrapper.rs** - Rust interface that creates an instance of `call_ramulator.cpp` through FFI bindings
+- **build.rs** - Rust script that implements bindgen and configures the C++ build
+- **call_ramulator.cpp** - Main C++ file that initializes Ramulator2. Contains methods that simulate frontend and memory system
+- **cargo.lock** - Auto-generated lock file that specifies exact Rust version used
+- **cargo.toml** - Rust package manifest that defines dependencies
+- **Makefile** - Manual build script for C/C++ compliation
+- **test_call_ramulator.c** - C test file that verifies the functionality of `call_ramulator.cpp`
+- **wrapper.hpp** - header file with necessary .c files from Ramulator2
 
 ## Requirements
 - **C++17 compatible compiler** (e.g., g++ ≥ 8)
