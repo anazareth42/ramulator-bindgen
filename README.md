@@ -45,6 +45,21 @@ These are the files that are important to the functionality of this project:
   - The memory system (e.g., number of read/write requests, queue occupancy)
 - Uses the `finalize()` method from Ramulator2 to trigger statistics reporting.
 
+## YAML Config
+This YAML file defines the system architecture and memory hierarchy used by Ramulator2 during simulation. It is passed into the wrapper at runtime to initialize the frontend (CPU model), memory controller, DRAM type, and translation scheme.
+```
+Frontend:
+  impl: SimpleO3
+  clock_ratio: 8
+  num_expected_insts: 500000
+  traces:
+    - /usr/scratch/anazareth8/ramulator2/example_inst.trace
+```
+- `impl: SimpleO3`: Uses an out-of-order CPU frontend to drive memory requests.
+- `clock_ratio: 8`: The frontend advances one cycle every 8 global cycles.
+- `num_expected_insts: 500000`: Stops simulation after 500,000 instructions.
+- `traces`: Specifies the instruction trace used to generate memory accesses.
+
 ## Run Simulation
 To build this project, we need to generate the FFI bindings from bindgen. Type the following command in the terminal:
 
