@@ -27,6 +27,24 @@ These are the files that are important to the functionality of this project:
 - [`spdlog`](https://github.com/gabime/spdlog) headers available (used internally by Ramulator2)
 - Ramulator2 source code downloaded (not a precompiled binary)
 
+## Function Descriptions
+`*create_ramulator_wrapper(const char *config_file);`
+- Creates an instance of Ramulator2 using the provided YAML configuration file.
+- Internally loads the config, initializes the frontend, and connects it to the memory system.
+- Returns a pointer to the RamulatorWrapper object.
+
+`unsigned long long get_latency_for_request(RamulatorWrapper* sys, unsigned long long addr);`
+- Simulates a single read request to the given address.
+- Returns the number of simulation cycles it took to complete the request.
+- Includes a callback mechanism to detect when the request has been serviced.
+- Internally handles frontend and memory system ticks with respect to their configured clock ratios.
+
+`void print_stats(RamulatorWrapper* sys);`
+- Finalizes the simulation and prints performance and architectural statistics from:
+  - The frontend (e.g., instruction counts, IPC)
+  - The memory system (e.g., number of read/write requests, queue occupancy)
+- Uses the `finalize()` method from Ramulator2 to trigger statistics reporting.
+
 ## Run Simulation
 To build this project, we need to generate the FFI bindings from bindgen. Type the following command in the terminal:
 
