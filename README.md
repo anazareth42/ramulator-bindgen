@@ -47,6 +47,7 @@ These are the files that are important to the functionality of this project:
 
 ## YAML Config
 This YAML file defines the system architecture and memory hierarchy used by Ramulator2 during simulation. It is passed into the wrapper at runtime to initialize the frontend (CPU model), memory controller, DRAM type, and translation scheme.
+### Frontend Configuration
 ```
 Frontend:
   impl: SimpleO3
@@ -59,6 +60,66 @@ Frontend:
 - `clock_ratio: 8`: The frontend advances one cycle every 8 global cycles.
 - `num_expected_insts: 500000`: Stops simulation after 500,000 instructions.
 - `traces`: Specifies the instruction trace used to generate memory accesses.
+
+### Address Translation
+```
+Translation:
+  impl: RandomTranslation
+  max_addr: 2147483648
+```
+- `RandomTranslation`: Adds address randomization for stress-testing DRAM mapping.
+- `max_addr`: Limits translated physical address space to 2 GB.
+
+### Memory System Configuration
+```
+MemorySystem:
+  impl: GenericDRAM
+  clock_ratio: 3
+```
+- `impl: GenericDRAM`: Uses a customizable DRAM memory system model.
+- `clock_ratio: 3`: Memory system ticks every 3 global cycles.
+
+### DRAM Configuration
+```
+DRAM:
+  impl: DDR4
+  org:
+    preset: DDR4_8Gb_x8
+    channel: 1
+    rank: 2
+  timing:
+    preset: DDR4_2400R
+```
+- `impl: DDR4`: Specifies DDR4 as the DRAM technology.
+- `org.preset: DDR4_8Gb_x8`: DRAM organization with 8 Gb per chip, x8 interface.
+- `channel: 1`, `rank: 2`: Simulates 1 memory channel and 2 ranks.
+- `timing.preset: DDR4_2400R`: Uses standard timing for DDR4-2400R (e.g., tCAS, tRCD, tRP).
+
+### DRAM Controller Settings
+```
+Controller:
+  impl: Generic
+  Scheduler:
+    impl: FRFCFS
+  RefreshManager:
+    impl: AllBank
+  RowPolicy:
+    impl: ClosedRowPolicy
+    cap: 4
+```
+- `Scheduler: FRFCFS`: First-Ready First-Come First-Serve scheduling (prioritizes row hits).
+- `RefreshManager: AllBank`: Refreshes all banks simultaneously.
+- `RowPolicy: ClosedRowPolicy`: Automatically closes rows after access.
+- `cap: 4`: Row buffer limit (number of open rows per bank).
+
+### Address Mapping
+```
+AddrMapper:
+  impl: RoBaRaCoCh
+```
+- `RoBaRaCoCh`: Maps physical addresses to DRAM channels as:
+   - Row → Bank → Rank → Column → Channel
+This influences how row buffer locality and bank conflicts occur in simulation.
 
 ## Run Simulation
 To build this project, we need to generate the FFI bindings from bindgen. Type the following command in the terminal:
